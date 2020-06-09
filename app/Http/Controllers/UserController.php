@@ -12,7 +12,7 @@ class UserController extends Controller
     {
         $request->validate([
             'nama' => 'required|max:255',
-            'nim' => 'required',
+            'nim' => 'required|unique:angkatans,nim',
             'nomor' => 'numeric|required',
             'angkatan' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048',
@@ -33,6 +33,7 @@ class UserController extends Controller
             $data->motto = $request->motto;
             $data->nomor = $request->nomor;
             $data->instagram = $request->instagram;
+            $data->status = 0;
 
             $data->save();
 

@@ -22,6 +22,7 @@ class CreateAngkatansTable extends Migration
             $table->string('instagram')->nullable();
             $table->text('motto')->nullable();
             $table->string('image');
+            $table->integer('status');
             $table->timestamps();
         });
     }

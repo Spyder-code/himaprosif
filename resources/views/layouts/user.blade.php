@@ -9,7 +9,7 @@
         <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,700|Oswald:400,700" rel="stylesheet">
 
         <link rel="stylesheet" href="{{asset('fonts/icomoon/style.css')}}">
-        <link rel="icon" href="{{asset('images/logo.png')}}">
+        <link rel="icon" href="{{asset('images/logo-HIMAPROSIF.png')}}">
         <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
         <link href="{{asset('fontawesome/css/all.min.css')}}" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="{{asset('css/jquery.fancybox.min.css')}}">
@@ -31,7 +31,13 @@
             {{-- <div class="spinner-border text-primary" role="status">
                 <span class="sr-only text-dark">Loading...</span>
             </div> --}}
-            <img src="{{asset('images/logo.png')}}" alt="Image" class="img-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-sm-12">
+                        <img src="{{asset('images/logo-himaprosif.png')}}" alt="Image" >
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="site-wrap" id="home-section">
@@ -80,7 +86,7 @@
 
                 <div class="site-logo">
                     <a href="{{url('/')}}" class="navbar-brand">
-                        <img src="{{asset('images/logo.png')}}" width="50" height="50">
+                        <img src="{{asset('images/logo-himaprosif.png')}}" width="50" height="50">
                         <span class="text-primary">Himaprosif</span>
                     </a>
                 {{-- <a href="index.html" class="text-black"><span class="text-primary">Sistem Informasi</a> --}}
@@ -126,7 +132,7 @@
                 <div class="row">
                     <div class="col-md-7">
                     <h2 class="footer-heading mb-4">HIMAPROSIF</h2>
-                    <p>Himpunan mahasiswa Sistem Informasi atau yang di singkat HIMAPROSIF UIN Sunan Ampel Surabaya merupakan sebuah organisasi mahasiswa internal dalam Kampus UINSA yang di tujukan untuk mengembangkan kreatifitas mahasiswa pada umumnya dan mahasiswa Sistem Informasi di UINSA pada khususnya</p>
+                    <p>Himpunan Mahasiswa Program Studi Sistem Informasi atau yang di singkat HIMAPROSIF UIN Sunan Ampel Surabaya merupakan sebuah organisasi mahasiswa internal di Kampus UINSA yang mempunyai tujuan untuk mengembangkan kreativitas mahasiswa pada umumnya dan Mahasiswa Sistem Informasi UINSA khususnya.</p>
                     </div>
                     <div class="col-md-4 ml-auto">
                     <h2 class="footer-heading mb-4">Features</h2>

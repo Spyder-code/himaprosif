@@ -8,7 +8,7 @@
             <div class="row align-items-center">
             <div class="col-lg-6">
                 <h1>Himaprosif</h1>
-                <p class="mb-5">Himpunan mahasiswa Sistem Informasi atau yang di singkat HIMAPROSIF UIN Sunan Ampel Surabaya merupakan sebuah organisasi mahasiswa internal dalam Kampus UINSA yang di tujukan untuk mengembangkan kreatifitas mahasiswa pada umumnya dan mahasiswa Sistem Informasi di UINSA pada khususnya</p>
+                <p class="mb-5">Himpunan Mahasiswa Program Studi Sistem Informasi atau yang di singkat HIMAPROSIF UIN Sunan Ampel Surabaya merupakan sebuah organisasi mahasiswa internal di Kampus UINSA yang mempunyai tujuan untuk mengembangkan kreativitas mahasiswa pada umumnya dan Mahasiswa Sistem Informasi UINSA khususnya.</p>
                 <form action="#">
                 <div class="form-group d-flex">
                     <input type="text" class="form-control" placeholder="Cari event">
@@ -35,7 +35,7 @@
                 <a href="#"><img src="{{asset('images/visi.png')}}" alt="Image" class="img-fluid" style="height: 200px"></a>
                 <div class="px-md-3 mt-3">
                   <h3><a href="#">Visi</a></h3>
-                  <p>Menjadi Program Studi Sistem Informasi yang unggul dan kompetitif bertaraf internasional berlandaskan nilai-nilai keislaman</p>
+                  <p>Menjadikan Himpunan Mahasiswa Program Studi Sistem Informasi (HIMAPROSIF) sebagai wadah perubahan, pemersatu, dan penampung aspirasi demi terwujudnya sinergitas dalam lingkup internal maupun eksternal</p>
                 </div>
               </div>
         </div>
@@ -44,7 +44,7 @@
                 <a href="#"><img src="{{asset('images/misi.png')}}" alt="Image" class="img-fluid" style="height: 200px"></a>
                 <div class="px-md-3 mt-3">
                   <h3><a href="#">Misi</a></h3>
-                  <p>Menyelenggarakan Program Studi Sistem Informasi yang unggul dengan mengintegrasikan ilmu pengetahuan dan teknologi dengan nilai keislaman</p>
+                  <p> Menjadi wadah aspirasi, tukar pikiran, dan kegiatan bagi Mahasiswa Program Studi Sistem Informasi UINSA, Membangun hubungan baik dengan organisasi dan lembaga dalam lingkup internal maupun eksternal, dan Mengoptimalkan tugas pokok dan fungsi dari setiap departemen.</p>
                 </div>
               </div>
         </div>
@@ -95,12 +95,12 @@
             </div>
             <div class="row mb-5">
                 <div class="col col-sm-6 text-center">
-                    <img src="images/adam.jpg" alt="Image" class="img-thumbnail rounded-circle mx-auto mb-2" style="height:200px">
+                    <img src="images/adam.jpg" alt="Image" class="img-thumbnail rounded-circle mx-auto mb-2" style="height:200px;">
                     <h3 class="text-center" style="color: #ff8b00">Mochamad Adam Aliansyah</h3>
                     <p class="text-center">Ketua Himaprosif</p>
                 </div>
                 <div class="col col-sm-6 text-center">
-                    <img src="images/galih.jpg" alt="Image" class="img-thumbnail rounded-circle mx-auto mb-2" style="height:200px">
+                    <img src="images/galih.jpg" alt="Image" class="img-thumbnail rounded-circle mx-auto mb-2" style="height:200px;">
                     <h3 class="text-center" style="color: #ff8b00">Mohamad Galih Alrisandi</h3>
                     <p class="text-center">Wakil Himaprosif</p>
                 </div>
@@ -109,12 +109,12 @@
                 <div class="col">
                     <div class="row">
                         <div class="col col-sm-6 text-center">
-                            <img src="images/wardah.jpg" alt="Image" class="img-thumbnail rounded-circle mx-auto mb-2" style="height:200px">
+                            <img src="images/wardah.jpg" alt="Image" class="img-thumbnail rounded-circle mx-auto mb-2" style="height:200px; width:65%">
                             <h3 class="text-center" style="color: #ff8b00">Luthfiah Wardah</h3>
                             <p class="text-center">Seketaris I Himaprosif</p>
                         </div>
                         <div class="col col-sm-6 text-center">
-                            <img src="images/farah.jpg" alt="Image" class="img-thumbnail rounded-circle mx-auto mb-2" style="height:200px">
+                            <img src="images/farah.jpg" alt="Image" class="img-thumbnail rounded-circle mx-auto mb-2" style="height:200px; width:65%">
                             <h3 class="text-center" style="color: #ff8b00">Farah Dwi Wahyuningtyas</h3>
                             <p class="text-center">Seketaris II Himaprosif</p>
                         </div>
@@ -123,12 +123,12 @@
                 <div class="col">
                     <div class="row">
                         <div class="col col-sm-6 text-center">
-                            <img src="images/lim.jpg" alt="Image" class="img-thumbnail rounded-circle mx-auto mb-2" style="height:200px">
+                            <img src="images/lim.jpg" alt="Image" class="img-thumbnail rounded-circle mx-auto mb-2" style="height:200px; width:65%">
                             <h2 class="text-center" style="color: #ff8b00">Lim'atin Amaliya</h2>
                             <p class="text-center">Bendahara I Himaprosif</p>
                         </div>
                         <div class="col col-sm-6 text-center">
-                            <img src="images/nabila.jpg" alt="Image" class="img-thumbnail rounded-circle mx-auto mb-2" style="height:200px">
+                            <img src="images/nabila.jpg" alt="Image" class="img-thumbnail rounded-circle mx-auto mb-2" style="height:200px; width:65%">
                             <h2 class="text-center" style="color: #ff8b00">Nabilatur Rahma</h2>
                             <p class="text-center">Bendahara II Himaprosif</p>
                         </div>
