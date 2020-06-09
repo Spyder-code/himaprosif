@@ -114,7 +114,7 @@
                             <p class="text-center">Seketaris I Himaprosif</p>
                         </div>
                         <div class="col col-sm-6 text-center">
-                            <img src="images/default.jpg" alt="Image" class="img-thumbnail rounded-circle mx-auto mb-2" style="height:200px">
+                            <img src="images/farah.jpg" alt="Image" class="img-thumbnail rounded-circle mx-auto mb-2" style="height:200px">
                             <h3 class="text-center" style="color: #ff8b00">Farah Dwi Wahyuningtyas</h3>
                             <p class="text-center">Seketaris II Himaprosif</p>
                         </div>
@@ -123,12 +123,12 @@
                 <div class="col">
                     <div class="row">
                         <div class="col col-sm-6 text-center">
-                            <img src="images/default.jpg" alt="Image" class="img-thumbnail rounded-circle mx-auto mb-2" style="height:200px">
+                            <img src="images/lim.jpg" alt="Image" class="img-thumbnail rounded-circle mx-auto mb-2" style="height:200px">
                             <h2 class="text-center" style="color: #ff8b00">Lim'atin Amaliya</h2>
                             <p class="text-center">Bendahara I Himaprosif</p>
                         </div>
                         <div class="col col-sm-6 text-center">
-                            <img src="images/default.jpg" alt="Image" class="img-thumbnail rounded-circle mx-auto mb-2" style="height:200px">
+                            <img src="images/nabila.jpg" alt="Image" class="img-thumbnail rounded-circle mx-auto mb-2" style="height:200px">
                             <h2 class="text-center" style="color: #ff8b00">Nabilatur Rahma</h2>
                             <p class="text-center">Bendahara II Himaprosif</p>
                         </div>
@@ -261,13 +261,17 @@
 
     <div class="modal fade bd-example-modal-lg" id="modal-news" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content" style="background-image: url({{asset('images/pamflet/pamflet.jpg')}});height:500px; background-size:cover;">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
+        <div class="row">
+            <div class="col col-sm-12 text-center">
+                <div class="modal-content" style="background-image: url({{asset('images/pamflet/pamflet.jpg')}});height:500px; background-size:cover;">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <a href="{{url('register-mahasiswa-aktif')}}" class="btn btn-success ml-5 mr-5" style="margin-top: 300px; height:40px">DAFTAR</a>
+                </div>
             </div>
-            <a href="{{url('register-mahasiswa-aktif')}}" class="btn btn-success" style="margin-top:300px;margin-left:160px; height:70px; font-size:25pt; width:35%">DAFTAR</a>
         </div>
     </div>
     </div>
