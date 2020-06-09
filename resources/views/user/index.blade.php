@@ -263,13 +263,15 @@
     <div class="modal-dialog">
         <div class="row">
             <div class="col col-sm-12 text-center">
-                <div class="modal-content" style="background-image: url({{asset('images/pamflet/pamflet.jpg')}});height:500px; background-size:cover;">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <div class="modal-content" style="background: rgb(219,67,50);
+                background: linear-gradient(90deg, rgba(219,67,50,1) 0%, rgba(0,232,255,1) 0%, rgba(7,202,230,1) 72%);">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute;left:95%;">
                           <span aria-hidden="true">&times;</span>
                         </button>
+                    <img src="{{asset('images/pamflet/pamflet.jpg')}}" class="img-thumbnail">
+                    <div class="modal-footera">
+                      <a href="{{url('register-mahasiswa-aktif')}}" class="btn btn-success d-block">Daftar</a>
                     </div>
-                    <a href="{{url('register-mahasiswa-aktif')}}" class="btn btn-success ml-5 mr-5" style="margin-top: 300px; height:40px">DAFTAR</a>
                 </div>
             </div>
         </div>
