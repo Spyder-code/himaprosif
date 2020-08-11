@@ -129,7 +129,7 @@ class HomeController extends Controller
         ]);
         if ($files = $request->file('image')) {
             $profileImage = $files->getClientOriginalName();
-            $files->move(public_path('images/berita/'), $profileImage);
+            $files->move('images/berita/', $profileImage);
             $insert['image'] = "$profileImage";
             $data = new Berita;
             $data->judul = $request->judul;
@@ -161,7 +161,7 @@ class HomeController extends Controller
         ]);
         if ($files = $request->file('image')) {
             $profileImage = $files->getClientOriginalName();
-            $files->move(public_path('images/gallery/'), $profileImage);
+            $files->move('images/gallery/', $profileImage);
             $insert['image'] = "$profileImage";
             $data = new Gallery;
             $data->judul = $request->judul;
@@ -195,7 +195,7 @@ class HomeController extends Controller
                 File::delete(public_path('images/user/'.$request->oldImage));
                     if ($files = $request->file('image')) {
                         $profileImage = $files->getClientOriginalName();
-                        $files->move(public_path('images/user/'), $profileImage);
+                        $files->move('images/user/', $profileImage);
                         $insert['image'] = "$profileImage";
                         User::where('id',$request->id)
                             ->update([
@@ -206,7 +206,7 @@ class HomeController extends Controller
         }else{
             if ($files = $request->file('image')) {
                 $profileImage = $files->getClientOriginalName();
-                $files->move(public_path('images/user/'), $profileImage);
+                $files->move('images/user/', $profileImage);
                 $insert['image'] = "$profileImage";
                 User::where('id',$request->id)
                     ->update([
@@ -242,7 +242,7 @@ class HomeController extends Controller
                 File::delete(public_path('images/gallery/'.$request->oldImage));
                     if ($files = $request->file('image')) {
                         $profileImage = $files->getClientOriginalName();
-                        $files->move(public_path('images/gallery/'), $profileImage);
+                        $files->move('images/gallery/', $profileImage);
                         $insert['image'] = "$profileImage";
                         Gallery::where('id',$request->id)
                             ->update([
@@ -282,7 +282,7 @@ class HomeController extends Controller
                 File::delete(public_path('images/berita/'.$request->oldImage));
                     if ($files = $request->file('image')) {
                         $profileImage = $files->getClientOriginalName();
-                        $files->move(public_path('images/berita/'), $profileImage);
+                        $files->move('images/berita/', $profileImage);
                         $insert['image'] = "$profileImage";
                         Berita::where('id',$request->id)
                             ->update([
