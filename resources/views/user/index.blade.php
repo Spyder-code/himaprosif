@@ -95,41 +95,41 @@
             </div>
             <div class="row mb-5">
                 <div class="col col-sm-6 text-center">
-                    <img src="images/adam.jpg" alt="Image" class="img-thumbnail rounded-circle mx-auto mb-2" style="height:200px;">
+                    <img src="images/adam.jpg" alt="Image" class=" img-profile picture rounded-circle mx-auto mb-2" style="height:200px;cursor:pointer">
                     <h3 class="text-center" style="color: #ff8b00">Mochamad Adam Aliansyah</h3>
                     <p class="text-center">Ketua Himaprosif</p>
                 </div>
                 <div class="col col-sm-6 text-center">
-                    <img src="images/galih.jpg" alt="Image" class="img-thumbnail rounded-circle mx-auto mb-2" style="height:200px;">
+                    <img src="images/galih.jpg" alt="Image" class=" img-profile picture rounded-circle mx-auto mb-2" style="height:200px;cursor:pointer">
                     <h3 class="text-center" style="color: #ff8b00">Mohamad Galih Alrisandi</h3>
                     <p class="text-center">Wakil Himaprosif</p>
                 </div>
             </div>
             <div class="row mt-5">
-                <div class="col">
+                <div class="col col-sm">
                     <div class="row">
                         <div class="col col-sm-6 text-center">
-                            <img src="images/wardah.jpg" alt="Image" class="img-thumbnail rounded-circle mx-auto mb-2" style="height:200px; width:65%">
-                            <h3 class="text-center" style="color: #ff8b00">Luthfiah Wardah</h3>
+                            <img src="images/wardah.jpg" alt="Image" class=" img-profile picture rounded-circle mx-auto mb-2" style="height:200px;cursor:pointer; width:65%">
+                            <h2 class="text-center" style="color: #ff8b00">Luthfiah Wardah</h2>
                             <p class="text-center">Seketaris I Himaprosif</p>
                         </div>
                         <div class="col col-sm-6 text-center">
-                            <img src="images/farah.jpg" alt="Image" class="img-thumbnail rounded-circle mx-auto mb-2" style="height:200px; width:65%">
-                            <h3 class="text-center" style="color: #ff8b00">Farah Dwi Wahyuningtyas</h3>
+                            <img src="images/farah.jpg" alt="Image" class=" img-profile picture rounded-circle mx-auto mb-2" style="height:200px;cursor:pointer; width:65%">
+                            <h2 class="text-center" style="color: #ff8b00">Farah Dwi W.</h2>
                             <p class="text-center">Seketaris II Himaprosif</p>
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col col-sm">
                     <div class="row">
                         <div class="col col-sm-6 text-center">
-                            <img src="images/lim.jpg" alt="Image" class="img-thumbnail rounded-circle mx-auto mb-2" style="height:200px; width:65%">
+                            <img src="images/lim.jpg" alt="Image" class=" img-profile picture rounded-circle mx-auto mb-2" style="height:200px;cursor:pointer; width:65%">
                             <h2 class="text-center" style="color: #ff8b00">Lim'atin Amaliya</h2>
                             <p class="text-center">Bendahara I Himaprosif</p>
                         </div>
                         <div class="col col-sm-6 text-center">
-                            <img src="images/nabila.jpg" alt="Image" class="img-thumbnail rounded-circle mx-auto mb-2" style="height:200px; width:65%">
-                            <h2 class="text-center" style="color: #ff8b00">Nabilatur Rahma</h2>
+                            <img src="images/nabila.jpg" alt="Image" class=" img-profile picture rounded-circle mx-auto mb-2" style="height:200px;cursor:pointer; width:65%">
+                            <h2 class="text-center" style="color: #ff8b00">Nabilatur R.</h2>
                             <p class="text-center">Bendahara II Himaprosif</p>
                         </div>
                     </div>
@@ -143,42 +143,21 @@
 <div class="container mb-5">
     <div class="text-center mt-5 ">
         <div class="block-heading-1">
-            <h2>Galery</h2>
+            <h2>Gallery</h2>
         </div>
     </div>
     <hr>
     <div class="owl-carousel owl-all">
+        @foreach ($gallery as $item)
         <div class="block-team-member-1 text-center rounded h-100">
-            <img src="{{asset('images/galery/1.jpg')}}" class="img-thumbnail" style="height:250px">
-            <h3 class="font-size-20 text-black">Title</h3>
-            <span class="d-block font-gray-5 letter-spacing-1 text-uppercase font-size-12 mb-3">10 January 2020 example</span>
+            <img src="{{asset('images/gallery/'.$item->image)}}" class="img-thumbnail picture" style="height:275px; cursor:pointer">
+            <h3 class="font-size-20 text-black">{{$item->judul}}</h3>
+            <span class="d-block font-gray-5 letter-spacing-1 text-uppercase font-size-12 mb-3">{{date('d F Y', strtotime($item->created_at))}}</span>
         </div>
-        <div class="block-team-member-1 text-center rounded h-100">
-            <img src="{{asset('images/galery/2.jpg')}}" class="img-thumbnail" style="height:250px">
-            <h3 class="font-size-20 text-black">Title</h3>
-            <span class="d-block font-gray-5 letter-spacing-1 text-uppercase font-size-12 mb-3">10 January 2020 example</span>
-        </div>
-        <div class="block-team-member-1 text-center rounded h-100">
-            <img src="{{asset('images/galery/3.jpg')}}" class="img-thumbnail" style="height:250px">
-            <h3 class="font-size-20 text-black">Title</h3>
-            <span class="d-block font-gray-5 letter-spacing-1 text-uppercase font-size-12 mb-3">10 January 2020 example</span>
-        </div>
-        <div class="block-team-member-1 text-center rounded h-100">
-            <img src="{{asset('images/galery/4.jpg')}}" class="img-thumbnail" style="height:250px">
-            <h3 class="font-size-20 text-black">Title</h3>
-            <span class="d-block font-gray-5 letter-spacing-1 text-uppercase font-size-12 mb-3">10 January 2020 example</span>
-        </div>
-        <div class="block-team-member-1 text-center rounded h-100">
-            <img src="{{asset('images/galery/5.jpg')}}" class="img-thumbnail" style="height:250px">
-            <h3 class="font-size-20 text-black">Title</h3>
-            <span class="d-block font-gray-5 letter-spacing-1 text-uppercase font-size-12 mb-3">10 January 2020 example</span>
-        </div>
-        <div class="block-team-member-1 text-center rounded h-100">
-            <img src="{{asset('images/galery/6.jpeg')}}" class="img-thumbnail" style="height:250px">
-            <h3 class="font-size-20 text-black">Title</h3>
-            <span class="d-block font-gray-5 letter-spacing-1 text-uppercase font-size-12 mb-3">10 January 2020 example</span>
-        </div>
-
+        @endforeach
+    </div>
+    <div class="text-center">
+        <a href="{{url('gallery')}}">Lihat Selengkapnya...</a>
     </div>
     </div>
 </div>
@@ -268,7 +247,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute;left:95%;">
                           <span aria-hidden="true">&times;</span>
                         </button>
-                    <img src="{{asset('images/pamflet/pamflet.jpg')}}" class="img-thumbnail">
+                    <img src="{{asset('images/pamflet/pamflet.jpg')}}" class="img-thumbnail picture">
                     <div class="modal-footera">
                       <a href="{{url('register-mahasiswa-aktif')}}" class="btn btn-success d-block">Daftar</a>
                     </div>
@@ -278,7 +257,35 @@
     </div>
     </div>
 
+    {{-- Modal Image --}}
+    <div class="modal fade imageModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 id="judulImage"></h1>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="itemImage" class="img-thumbnail picture">
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
 
+    @section('script')
+        <script>
+            $(function(){
+                $('.picture').click(function () {
+                    var src = $(this).attr('src');
+                    $('#itemImage').attr('src',src);
+                    $('.imageModal').modal('show');
+                });
+            });
+        </script>
+    @endsection
 
 
 

@@ -1,8 +1,7 @@
 @extends('layouts.admin')
-@section('register', 'active')
-@section('img','default.jpg')
-@section('main')
-    <div class="container mt-5">
+@section('judul', "Angkatan")
+@section('content')
+    <div class="container">
         <div class="row">
             <div class="col text-center">
                 <h1>Progress Pendaftaran</h1>

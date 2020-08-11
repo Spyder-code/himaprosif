@@ -9,7 +9,7 @@
         <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,700|Oswald:400,700" rel="stylesheet">
 
         <link rel="stylesheet" href="{{asset('fonts/icomoon/style.css')}}">
-        <link rel="icon" href="{{asset('images/logo-HIMAPROSIF.png')}}">
+        <link rel="icon" href="{{asset('images/logo-himaprosif.png')}}">
         <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
         <link href="{{asset('fontawesome/css/all.min.css')}}" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="{{asset('css/jquery.fancybox.min.css')}}">
@@ -109,7 +109,7 @@
                     <li><a href="{{url('struktur-organisasi')}}" class="nav-link @yield('link-struktur')">Struktur Organisasi</a></li>
                     <li><a href="{{url('daftar-angkatan')}}" class="nav-link @yield('link-angkatan')">Daftar Angkatan</a></li>
                     {{-- <li><a href="{{url('materi')}}" class="nav-link @yield('link-materi')">Materi SI</a></li> --}}
-                    <li><a href="{{url('galery')}}" class="nav-link @yield('link-galery')">Galery</a></li>
+                    <li><a href="{{url('gallery')}}" class="nav-link @yield('link-galery')">Gallery</a></li>
                     <li><a href="{{url('contact')}}" class="nav-link @yield('link-contact')">Contact us</a></li>
                     </ul>
                 </nav>
@@ -142,7 +142,7 @@
                         <li><a href="{{url('struktur-organisasi')}}">Struktur Organisasi</a></li>
                         <li><a href="{{url('daftar-angkatan')}}">Daftar Angkatan</a></li>
                         {{-- <li><a href="{{url('materi')}}">Materi SI</a></li> --}}
-                        <li><a href="{{url('galery')}}">Galery</a></li>
+                        <li><a href="{{url('gallery')}}">Gallery</a></li>
                         <li><a href="{{url('contact')}}">Contact us</a></li>
                     </ul>
                     </div>
@@ -199,7 +199,7 @@
         <script src="{{asset('js/aos.js')}}"></script>
 
         <script src="{{asset('js/main.js')}}"></script>
-
+        @yield('script')
 
         </body>
 

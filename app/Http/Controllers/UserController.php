@@ -2,12 +2,45 @@
 
 namespace App\Http\Controllers;
 
-use App\angkatan;
+use App\Angkatan;
+use App\Berita;
+use App\Gallery;
 use App\Pesan;
+use App\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+
+    public function index()
+    {
+        $gallery = Gallery::orderBy('updated_at', 'desc')->paginate(6);
+        return view('user.index',compact('gallery'));
+    }
+
+    public function gallery()
+    {
+        $gallery = Gallery::orderBy('updated_at', 'desc')->paginate(6);
+        return view('user.galery',compact('gallery'));
+    }
+
+    public function berita()
+    {
+        $berita = Berita::all()->where('kategori',"Berita");
+        $acara = Berita::all()->where('kategori',"Acara");
+        return view('user.berita', compact('berita','acara'));
+    }
+
+    public function detailBerita($judul)
+    {
+        $data = Berita::where('judul',$judul)->first();
+        $idUser = $data->id_user;
+        $user = User::find($idUser);
+        $berita = Berita::where('kategori',"Berita")->orderBy('updated_at', 'desc')->paginate(3);
+        $acara = Berita::where('kategori',"Acara")->orderBy('updated_at', 'desc')->paginate(3);
+        return view('user.detailBerita',compact('berita','acara','data','user'));
+    }
+
     public function registerAngkatan(Request $request)
     {
         $request->validate([
@@ -25,18 +58,16 @@ class UserController extends Controller
             $files->move($destinationPath, $profileImage);
             $insert['image'] = "$profileImage";
 
-            $data = new angkatan();
-            $data->image = "$profileImage";
-            $data->nim = $request->nim;
-            $data->nama = $nama;
-            $data->angkatan = $request->angkatan;
-            $data->motto = $request->motto;
-            $data->nomor = $request->nomor;
-            $data->instagram = $request->instagram;
-            $data->status = 0;
-
-            $data->save();
-
+            Angkatan::create([
+                'nama' => $request->nama,
+                'nim' => $request->nim,
+                'nomor' => $request->nomor,
+                'angkatan' => $request->angkatan,
+                'instagram' => $request->instagram,
+                'motto' => $request->motto,
+                'image' => "$profileImage",
+                'status' => 0,
+            ]);
             return back()->with(['success' => 'Selamat anda sudah terdaftar sebagai mahasiswa Sistem Informasi Aktif']);
         }
     }

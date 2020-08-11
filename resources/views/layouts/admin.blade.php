@@ -1,208 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Admin</title>
+    <!-- plugins:css -->
 
-<head>
+    <link rel="stylesheet" href="{{asset('admin/vendors/mdi/css/materialdesignicons.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/vendors/css/vendor.bundle.base.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">
+    <link rel="shortcut icon" href="{{asset('admin/images/favicon.png')}}" />
+    {{-- <script src="{{asset('js/jquery-3.4.1.min.js')}}"></script> --}}
+    <script src="{{asset('admin/vendors/js/vendor.bundle.base.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{asset('css/dataTables.css')}}">
+    <link href="{{asset('css/tabel.css')}}" rel="stylesheet">
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Halaman Admin</title>
-
-  <!-- Custom fonts for this template-->
-  <link href="{{asset('fontawesome/css/all.min.css')}}" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-  <!-- Custom styles for this template-->
-  <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="{{asset('css/mdb.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('css/mdb.lite.css')}}">
-  <link href="{{asset('css/mdtimepicker.css')}}" rel="stylesheet">
-<!-- Core Stylesheet -->
-<link rel="stylesheet" href="{{asset('css/evo-calender/evo-calendar.css')}}" />
-<!-- Optional Themes -->
-<link rel="stylesheet" href="{{asset('css/evo-calender/evo-calendar.midnight-blue.css')}}" />
-<!-- JavaScript -->
-
-  <!-- my css -->
-  <link rel="stylesheet" href="{{asset('css/style.css')}}">
-  <link rel="stylesheet" href="{{asset('css/selectize.css')}}">
-  <link rel="icon" href="{{asset('images/logo.png')}}">
-
-    <script type="text/javascript" src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
-    <script src="{{asset('js/standalone/selectize.min.js')}}" type="text/javascript"></script>
-    <script src="{{asset('js/mdtimepicker.js')}}" type="text/javascript"></script>
-    <script src="{{asset('js/evo-calendar/evo-calendar.js')}}"></script>
-
-</head>
-
-<body id="page-top">
-   <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light topbar static-top shadow" style="background-image: linear-gradient(to right, #74ebd5 0%, #9face6 100%);">
-          <img src="{{asset('images/logo.png')}}" class="rounded-circle mr-sm-2" style="width: 40px; height: 40px;">
-        <a class="navbar-brand" href="home.html">Admin</a>
-
-          <!-- Sidebar Toggle (Topbar) -->
-          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
+    <script type="text/javascript" charset="utf8" src="{{asset('js/dataTables.js')}}"></script>
+    <script src="{{asset('js/tabel.js')}}"></script>
+    <style>
+        #headerJudul{
+            margin-right: 250px;
+        }
+        @media(max-width:600px){
+            #headerJudul{
+            margin-right: 40px;
+        }
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:../../partials/_navbar.html -->
+      <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+          <a class="navbar-brand brand-logo">Admin Himaprosif</a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-stretch">
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="mdi mdi-menu"></span>
           </button>
-
-
-          <!-- Topbar Navbar -->
-          <ul class="navbar-nav ml-auto">
-
-         <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-light-600">{{Auth::user()->name}}</span>
-                <img class="img-profile rounded-circle mr-5" src="{{asset('images/')}}/@yield('img')" style="width: 60px; height: 60px; ">
+          <ul class="navbar-nav navbar-nav-right">
+            <li><h1 id="headerJudul">@yield('judul')</h1></li>
+            <li class="nav-item nav-profile dropdown">
+              <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                <div class="nav-profile-img">
+                  <img src="{{asset('images/user/'.Auth::user()->image)}}" alt="image">
+                  <span class="availability-status online"></span>
+                </div>
+                <div class="nav-profile-text">
+                  <p class="mb-1 text-black">{{Auth::user()->name}}</p>
+                </div>
               </a>
-              <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
-                </a>
-
+              <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
+                <a class="dropdown-item" href="{{url('admin/history')}}">
+                  <i class="mdi mdi-cached mr-2 text-success"></i> Activity Log </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
-                </a>
+                <a class="dropdown-item" href="{{url('logout')}}" onclick="return confirm('Are you sure?')">
+                  <i class="mdi mdi-logout mr-2 text-primary"></i> Signout </a>
               </div>
             </li>
-
+            <li class="nav-item d-none d-lg-block full-screen-link">
+              <a class="nav-link">
+                <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
+              </a>
+            </li>
+            <li class="nav-item nav-logout d-none d-lg-block">
+              <a class="nav-link" href="{{url('logout')}}" onclick="return confirm('Are you sure?')">
+                <i class="mdi mdi-power"></i>
+              </a>
+            </li>
           </ul>
-
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+            <span class="mdi mdi-menu"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+            <li class="nav-item nav-profile">
+              <a href="#" class="nav-link">
+                <div class="nav-profile-image">
+                  <img src="{{asset('images/user/'.Auth::user()->image)}}" alt="profile">
+                  <span class="login-status online"></span>
+                  <!--change to offline or busy as needed-->
+                </div>
+                <div class="nav-profile-text d-flex flex-column">
+                  <span class="font-weight-bold mb-2">{{Auth::user()->nama_lengkap}}</span>
+                  <span class="text-secondary text-small">{{Auth::user()->divisi}}</span>
+                </div>
+                <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+              </a>
+            </li>
+            {{-- <li class="nav-item">
+              <a class="nav-link" href="{{url('admin/home')}}">
+                <span class="menu-title">Dashboard</span>
+                <i class="mdi mdi-home menu-icon"></i>
+              </a>
+            </li> --}}
+            <li class="nav-item">
+              <a class="nav-link" href="{{url('admin/profile')}}">
+                <span class="menu-title">Profile</span>
+                <i class="mdi mdi-account menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url('admin/berita-acara')}}">
+                <span class="menu-title">Berita & Acara</span>
+                <i class="mdi mdi-contacts menu-icon"></i>
+              </a>
+            </li>
+            @if (Auth::user()->level==1)
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('admin/user')}}">
+                  <span class="menu-title">Management User</span>
+                  <i class="mdi mdi-account-multiple menu-icon"></i>
+                </a>
+              </li>
+            @endif
+            <li class="nav-item">
+              <a class="nav-link" href="{{url('admin/gallery')}}">
+                <span class="menu-title">Tambah Gallery</span>
+                <i class="mdi mdi-upload menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages">
+                <span class="menu-title">Pendaftaran</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-clipboard-outline menu-icon"></i>
+              </a>
+              <div class="collapse" id="general-pages">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="{{url('admin/register-angkatan')}}">Angkatan </a></li>
+                  <li class="nav-item"> <a class="nav-link disabled" href="{{url('admin/register-ifest')}}">I-fest  <i class="mdi mdi-lock menu-icon"></i></a></li>
+                  <li class="nav-item"> <a class="nav-link disabled" href="{{url('admin/register-himaprosif')}}">Himaprosif  <i class="mdi mdi-lock menu-icon"></i></a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url('admin/pesan')}}">
+                <span class="menu-title">Kotak Masuk</span>
+                <i class="mdi mdi-message menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url('admin/history')}}">
+                <span class="menu-title">History</span>
+                <i class="mdi mdi-cached menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item sidebar-actions">
+              <span class="nav-link">
+                <a href="{{url('logout')}}" onclick="return confirm('are you sure ?')" class="btn btn-block btn-lg btn-gradient-danger mt-4">Logout</a>
+              </span>
+            </li>
+          </ul>
         </nav>
-        <!-- End of Topbar -->
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
 
-  <!-- Page Wrapper -->
-  <div id="wrapper">
+            @yield('content')
 
 
-    <!-- Sidebar -->
-    <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-image: linear-gradient(to top, #37ecba 0%, #72afd3 100%);">
-
-      <!-- Nav Item - Charts -->
-      <li class="nav-item @yield('profil')">
-        <a class="nav-link" href="{{url('/home')}}">
-          <i class="fas fa-user fa-sm fa-fw"></i>
-          <span>Profil</span></a>
-      </li>
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item @yield('register')">
-        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-list-ul"></i>
-          <span>Pendaftran</span>
-        </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="{{url('register-angkatan')}}">Angkatan</a>
-              <a class="collapse-item" href="{{url('register-ifest')}}">I-fest</a>
-              <a class="collapse-item" href="{{url('register-hima')}}">Himaprosif</a>
           </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+          <footer class="footer text-center">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2020 <a href="http://spydercode.site/" target="_blank">Spydercode</a>. All rights reserved.</span>
+            </div>
+          </footer>
+          <!-- partial -->
         </div>
-      </li>
-
-      <!-- Nav Item - Charts -->
-      <li class="nav-item @yield('berita')">
-        <a class="nav-link" href="{{url('/berita')}}">
-          <i class="fas fa-fw fa-plus-circle"></i>
-          <span>Berita</span></a>
-      </li>
-
-      <!-- Nav Item - Tables -->
-      <li class="nav-item @yield('acara')">
-        <a class="nav-link" href="{{url('acara')}}">
-          <i class="fas fa-fw fa-calendar-alt"></i>
-          <span>Acara</span></a>
-      </li>
-
-      <li class="nav-item @yield('pesan')">
-        <a class="nav-link" href="{{url('pesan')}}">
-          <i class="fas fa-fw fa-message"></i>
-          <span>Pesan</span></a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
-          <i class="fas fa-sign-out-alt"></i>
-          <span>Logout</span></a>
-      </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
-
-      <!-- Sidebar Toggler (Sidebar) -->
-      <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        <!-- main-panel ends -->
       </div>
-
-    </ul>
-    <!-- End of Sidebar -->
-
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-
-      <!-- Main Content -->
-      <div id="content">
-
-        @yield('main')
-
+      <!-- page-body-wrapper ends -->
     </div>
-    <!-- End of Main Content -->
+    <!-- container-scroller -->
+    <!-- plugins:js -->
 
-    <!-- Footer -->
-    <footer class="sticky-footer bg-white">
-      <div class="container my-auto">
-        <div class="copyright text-center my-auto">
-          <span>Copyright &copy; Your Website 2019</span>
-        </div>
-      </div>
-    </footer>
-    <!-- End of Footer -->
-
-  </div>
-  <!-- End of Content Wrapper -->
-
-</div>
-<!-- End of Page Wrapper -->
-
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-  <i class="fas fa-angle-up"></i>
-</a>
-
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">×</span>
-        </button>
-      </div>
-      <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-      <div class="modal-footer">
-        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-        <a class="btn btn-primary" href="{{url('logout')}}">Logout</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Bootstrap core JavaScript-->
-
-<script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
-<!-- Custom scripts for all pages-->
-<script src="{{asset('js/sb-admin-2.min.js')}}"></script>
-
-</body>
-
+    <script src="{{asset('admin/vendors/chart.js/Chart.min.js')}}"></script>
+    <script src="{{asset('admin/js/off-canvas.js')}}"></script>
+    <script src="{{asset('admin/js/hoverable-collapse.js')}}"></script>
+    <script src="{{asset('admin/js/misc.js')}}"></script>
+    <script src="{{asset('admin/js/dashboard.js')}}"></script>
+    @yield('custom-script')
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <!-- End custom js for this page -->
+  </body>
 </html>
