@@ -113,6 +113,12 @@
                 <i class="mdi mdi-contacts menu-icon"></i>
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url('admin/addBerita')}}">
+                <span class="menu-title">Add Berita & Acara</span>
+                <i class="mdi mdi-plus menu-icon"></i>
+              </a>
+            </li>
             @if (Auth::user()->level==1)
             <li class="nav-item">
                 <a class="nav-link" href="{{url('admin/user')}}">

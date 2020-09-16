@@ -81,6 +81,16 @@ class HomeController extends Controller
         return view('admin.berita-acara', compact('data'));
     }
 
+    public function beritaAcaraAdd()
+    {
+        return view('admin.addBerita');
+    }
+
+    public function beritaAcaraUpdate(Berita $berita)
+    {
+        return view('admin.ubahBerita',compact('berita'));
+    }
+
     public function detailBerita($id)
     {
         $data = Berita::find($id);
@@ -146,7 +156,7 @@ class HomeController extends Controller
                 'icon' => "mdi-book-open-page-variant",
                 'status' => 0
             ]);
-            return back()->with('success','Data berhasil disimpan');
+            return redirect('admin/berita-acara/'.$data->id)->with('success','Data berhasil disimpan');
         }else{
             return back()->with('danger','Gambar tidak sesuai!');
         }
@@ -266,7 +276,7 @@ class HomeController extends Controller
     {
         $id = Auth::user()->id;
         $request->validate([
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            // 'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'judul' => 'required',
             'isi' => 'required',
         ]);
@@ -301,7 +311,7 @@ class HomeController extends Controller
             'icon' => "mdi-book-open-page-variant",
             'status' => 0
         ]);
-        return back()->with('success','Data berhasil di ubah!');
+        return redirect('admin/berita-acara/'.$request->id)->with('success','Data berhasil di ubah!');
     }
 
     public function updatePassword(Request $request)

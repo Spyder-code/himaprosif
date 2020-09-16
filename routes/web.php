@@ -43,6 +43,7 @@ Route::get('admin-login', function () {
 Route::get('/','UserController@index');
 Route::get('/gallery','UserController@gallery');
 Route::get('/berita-acara','UserController@berita');
+Route::get('/media-partner','UserController@partner');
 Route::get('/berita-acara/{judul}','UserController@detailBerita');
 
 // Admin
@@ -54,6 +55,8 @@ Route::get('/admin/user', 'HomeController@user');
 Route::get('/admin/user/{name}', 'HomeController@detailUser');
 Route::get('/admin/history', 'HomeController@history');
 Route::get('/admin/berita-acara', 'HomeController@beritaAcara');
+Route::get('/admin/addBerita', 'HomeController@beritaAcaraAdd');
+Route::get('/admin/updateBerita/{berita}', 'HomeController@beritaAcaraUpdate');
 Route::get('/admin/berita-acara/{id}', 'HomeController@detailBerita');
 Route::get('/admin/register-angkatan', 'HomeController@registerAngkatan');
 Auth::routes();

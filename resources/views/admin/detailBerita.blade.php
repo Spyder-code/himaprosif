@@ -7,7 +7,30 @@
     }
 </style>
     <div class="container">
-        <a href="{{url('admin/berita-acara')}}" class="btn btn-info mb-3">Kembali</a>
+        @if ($message = Session::get('success'))
+        <div class="row">
+            <div class="col mt-3">
+                <div class="alert alert-success alert-block">
+                    <button type="button" class="close" data-dismiss="alert">x</button>
+                    <strong>{{ $message }}</strong>
+                </div>
+            </div>
+        </div>
+    @endif
+    @if ($message = Session::get('danger'))
+        <div class="row">
+            <div class="col mt-3">
+                <div class="alert alert-danger alert-block">
+                    <button type="button" class="close" data-dismiss="alert">x</button>
+                    <strong>{{ $message }}</strong>
+                </div>
+            </div>
+        </div>
+    @endif
+        <div class="d-flex">
+            <a href="{{url('admin/berita-acara')}}" class="btn btn-info mb-3 mr-3">Kembali</a>
+            <a href="{{url('admin/updateBerita/'.$data->id)}}" class="btn btn-primary mb-3">Ubah</a>
+        </div>
         <div class="card">
             <div class="card-body">
                 <div class="row">

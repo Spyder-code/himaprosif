@@ -35,7 +35,7 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        <button href="#" data-toggle="modal" data-target=".create" class="ml-2 btn btn-primary">Tambah Berita / Acara</button>
+                        <a href="{{ url('admin/addBerita') }}" class="ml-2 btn btn-primary">Tambah Berita / Acara</a>
                     </div>
                     <div class="card-body">
                         <table class="table table-responsive">
@@ -56,62 +56,7 @@
                                 <td>{{$item->kategori}}</td>
                                 <td style="cursor: pointer"> <img src="{{asset('images/berita/'.$item->image)}}" style="width: 80px; height:80px" class="picture"></td>
                                 <td class="d-flex flex-row">
-                                    <button href="#" data-toggle="modal" data-target=".update-{{$item->id}}" class="ml-2 btn btn-info">Ubah</button>
-                                    {{-- Modal Update --}}
-                            <div class="modal fade update-{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <form action="{{url('updateBerita')}}" method="post" enctype="multipart/form-data">
-                                        @csrf
-                                        <input type="hidden" name="oldImage" value="{{$item->image}}">
-                                        <input type="hidden" name="id" value="{{$item->id}}">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h1>Update</h1>
-                                            <button class="close" type="button" data-dismiss="modal" aria-label="close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="form-group">
-                                                <input type="text" name="judul" class="form-control" value="{{$item->judul}}">
-                                                <select name="kategori" class="form-control mt-2">
-                                                    @if ($item->kategori=="Berita")
-                                                    <option selected value="Berita">Berita</option>
-                                                    <option value="Acara">Acara</option>
-                                                    @else
-                                                    <option value="Berita">Berita</option>
-                                                    <option selected value="Acara">Acara</option>
-                                                    @endif
-                                                </select>
-                                                <textarea id="inputArea-{{$item->id}}" name="isi" cols="30" rows="10" class="form-control mt-2"></textarea>
-                                                <input type="file" class="mt-2 in" name="image" id="gambarProduk1" onchange="loadFile1(event)">
-                                                <img id="output1" style="width:100px; height:100px" class="img-thumbnail pic mt-3" />
-                                                <script>
-                                                        $('.pic').hide();
-                                                    function readURL(input) {
-                                                        if (input.files && input.files[0]) {
-                                                            var reader = new FileReader();
-                                                            reader.onload = function(e) {
-                                                            $('.pic').attr('src', e.target.result);
-                                                            }
-                                                            reader.readAsDataURL(input.files[0]); // convert to base64 string
-                                                        }
-                                                    }
-                                                    $(".in").change(function() {
-                                                        readURL(this);
-                                                        $('.pic').show();
-                                                    });
-                                                    $('#inputArea-'+{{$item->id}}).val('{!!$item->isi!!}');
-                                                </script>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="submit" class="btn btn-success">Update</button>
-                                        </div>
-                                    </div>
-                                </form>
-                                </div>
-                            </div>
+                                    <a href="{{ url('admin/updateBerita/'.$item->id) }}" class="ml-2 btn btn-info">Ubah</a>
                                     <a href="{{url('admin/berita-acara/'.$item->id)}}" class="ml-2 btn btn-primary">Detail</a>
                                     <form action="{{url('deleteBerita')}}" method="post">
                                         @csrf
@@ -130,38 +75,6 @@
         </div>
     </div>
 
-    {{-- Modal create --}}
-    <div class="modal fade create" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <form action="{{url('createBerita')}}" method="post" enctype="multipart/form-data">
-                @csrf
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1>Create</h1>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <input type="text" name="judul" class="form-control" placeholder="Judul">
-                        <select name="kategori" class="form-control mt-2">
-                            <option value="Berita">Berita</option>
-                            <option value="Acara">Acara</option>
-                        </select>
-                        <textarea id="in_txt" cols="30" rows="10" placeholder="Keterangan" class="form-control mt-2"></textarea>
-                        <p><input id="out_html" name="isi" class="form-control" type="hidden"/></p>
-                        <input type="file" class="mt-2" name="image" id="gambarProduk1" onchange="loadFile1(event)" required>
-                        <img id="output2" style="width:150px; height:100px" class="img-thumbnail mt-3" />
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" id="btn" class="btn btn-success">Tambahkan</button>
-                </div>
-            </div>
-        </form>
-        </div>
-    </div>
     {{-- Modal Image --}}
     <div class="modal fade imageModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog">

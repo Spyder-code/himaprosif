@@ -2,9 +2,27 @@
     <html lang="en">
 
     <head>
-        <title>Himaprosif</title>
+        <title>Himaprosif - UINSA</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="keywords" content="himaprosif, uinsa, himaprosif uinsa">
+        <!-- Primary Meta Tags -->
+<meta name="title" content="Himaprosif - UINSA">
+<meta name="description" content="Himpunan Mahasiswa Program Studi Sistem Informasi atau yang di singkat HIMAPROSIF UIN Sunan Ampel Surabaya merupakan sebuah organisasi mahasiswa internal di Kampus UINSA yang mempunyai tujuan untuk mengembangkan kreativitas mahasiswa pada umumnya dan Mahasiswa Sistem Informasi UINSA khususnya.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://himaprosif.com">
+<meta property="og:title" content="Himaprosif - UINSA">
+<meta property="og:description" content="Himpunan Mahasiswa Program Studi Sistem Informasi atau yang di singkat HIMAPROSIF UIN Sunan Ampel Surabaya merupakan sebuah organisasi mahasiswa internal di Kampus UINSA yang mempunyai tujuan untuk mengembangkan kreativitas mahasiswa pada umumnya dan Mahasiswa Sistem Informasi UINSA khususnya.">
+<meta property="og:image" content="{{ asset('images/logo-himaprosif.png') }}">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://metatags.io/">
+<meta property="twitter:title" content="Himaprosif - UINSA">
+<meta property="twitter:description" content="Himpunan Mahasiswa Program Studi Sistem Informasi atau yang di singkat HIMAPROSIF UIN Sunan Ampel Surabaya merupakan sebuah organisasi mahasiswa internal di Kampus UINSA yang mempunyai tujuan untuk mengembangkan kreativitas mahasiswa pada umumnya dan Mahasiswa Sistem Informasi UINSA khususnya.">
+<meta property="twitter:image" content="{{ asset('images/logo-himaprosif.png') }}">
 
         <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,700|Oswald:400,700" rel="stylesheet">
 
@@ -106,10 +124,11 @@
                         <li><a href="{{url('register-proksi')}}" style="color: grey" class="nav-link disabled"><i class="fas fa-lock mr-2"></i> Panitia proksi</a></li>
                         </ul>
                     </li>
-                    <li><a href="{{url('struktur-organisasi')}}" class="nav-link @yield('link-struktur')">Struktur Organisasi</a></li>
+                    {{-- <li><a href="{{url('struktur-organisasi')}}" class="nav-link @yield('link-struktur')">Struktur Organisasi</a></li> --}}
                     <li><a href="{{url('daftar-angkatan')}}" class="nav-link @yield('link-angkatan')">Daftar Angkatan</a></li>
                     {{-- <li><a href="{{url('materi')}}" class="nav-link @yield('link-materi')">Materi SI</a></li> --}}
                     <li><a href="{{url('gallery')}}" class="nav-link @yield('link-galery')">Gallery</a></li>
+                    <li><a href="{{url('media-partner')}}" class="nav-link @yield('link-partner')">Media Partner</a></li>
                     <li><a href="{{url('contact')}}" class="nav-link @yield('link-contact')">Contact us</a></li>
                     </ul>
                 </nav>
@@ -143,6 +162,7 @@
                         <li><a href="{{url('daftar-angkatan')}}">Daftar Angkatan</a></li>
                         {{-- <li><a href="{{url('materi')}}">Materi SI</a></li> --}}
                         <li><a href="{{url('gallery')}}">Gallery</a></li>
+                        <li><a href="{{url('media-partner')}}">Media Partner</a></li>
                         <li><a href="{{url('contact')}}">Contact us</a></li>
                     </ul>
                     </div>

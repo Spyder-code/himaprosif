@@ -31,6 +31,11 @@ class UserController extends Controller
         return view('user.berita', compact('berita','acara'));
     }
 
+    public function partner()
+    {
+        return view('user.partner');
+    }
+
     public function detailBerita($judul)
     {
         $data = Berita::where('judul',$judul)->first();
