@@ -21,7 +21,7 @@
                               <div class="blog-excerpt">
                                 <span class="d-block text-muted">{{date('d F Y', strtotime($item->created_at))}}</span>
                                 <h2 class="h4 mb-3"><a href="{{url('berita-acara/'.$item->judul)}}">{{$item->judul}}</a></h2>
-                                <p><a href="{{url('berita-acara/'.$item->judul)}}" class="text-primary">Read More</a></p>
+                                <p><a href="{{url('berita-acara/'.$item->slug)}}" class="text-primary">Read More</a></p>
                               </div>
                             </div>
                           </div>
@@ -47,7 +47,7 @@
                               <div class="blog-excerpt">
                                 <span class="d-block text-muted">{{date('d F Y', strtotime($item->created_at))}}</span>
                                 <h2 class="h4  mb-3"><a href="{{url('berita-acara/'.$item->judul)}}">{{$item->judul}}</a></h2>
-                                <p><a href="{{url('berita-acara/'.$item->judul)}}" class="text-primary">Read More</a></p>
+                                <p><a href="{{url('berita-acara/'.$item->slug)}}" class="text-primary">Read More</a></p>
                               </div>
                             </div>
                           </div>

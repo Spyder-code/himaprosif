@@ -21,7 +21,7 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img src="{{asset('images/logo-himaprosif.png')}}" alt="IMG">
+					<a href="{{url('/')}}"><img src="{{asset('images/logo-himaprosif.png')}}" alt="IMG"></a>
 				</div>
 
                 <form class="login100-form validate-form" method="POST" action="{{ route('login') }}">

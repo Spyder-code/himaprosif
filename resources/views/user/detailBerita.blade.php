@@ -1,5 +1,8 @@
 @extends('layouts.user')
 @section('link-berita','active')
+@section('livewire-head')
+  @livewireStyles
+@endsection
 @section('main')
 <style>
     p{
@@ -14,12 +17,14 @@
             <div class="block-heading-1 mt-3 mb-2 text-center" data-aos="fade-right" data-aos-delay="">
                 <h2>{{$data->judul}}</h2>
             </div>
-            <span class="d-block text-muted">Upload on {{date('d F Y', strtotime($data->created_at))}}</span>
+            <span class="d-block text-muted mt-3 font-weight-bold">Upload on {{date('d F Y', strtotime($data->created_at))}}</span>
             <hr>
-
-            <p class="mt-3">
-               {!!$data->isi!!}
-            </p>
+            <p class="mt-3">{!!$data->isi!!}</p>
+            <hr>
+            <!-- Livewire Section -->
+            @livewire('komentar', ['data' => $data])
+            @livewire('form-komentar', ['data' => $data])
+            <!-- Livewire Section -->
 
         </div>
         <div class="col-md-4 sidebar">
@@ -44,4 +49,7 @@
       </div>
     </div>
   </div>
+@endsection
+@section('livewire-script')
+  @livewireScripts
 @endsection

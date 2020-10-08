@@ -36,13 +36,13 @@
                 @csrf
                 <div class="form-group row">
                 <div class="col-md-12 mb-4 mb-lg-0">
-                    <input name="nama" type="text" class="form-control" placeholder="Name">
+                    <input name="nama" type="text" class="form-control" placeholder="Name" autocomplete="off">
                 </div>
                 </div>
 
                 <div class="form-group row">
                 <div class="col-md-12">
-                    <input name="email" type="text" class="form-control" placeholder="Email address">
+                    <input name="email" type="text" class="form-control" placeholder="Email address" autocomplete="off">
                 </div>
                 </div>
 
