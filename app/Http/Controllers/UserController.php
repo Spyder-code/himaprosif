@@ -38,7 +38,8 @@ class UserController extends Controller
 
     public function detailBerita($judul)
     {
-        $data = Berita::where('judul',$judul)->first();
+        $judulBerita = ucwords(str_replace('-', ' ', $judul));
+        $data = Berita::where('judul',$judulBerita)->first();
         $idUser = $data->id_user;
         $user = User::find($idUser);
         $berita = Berita::where('kategori',"Berita")->orderBy('updated_at', 'desc')->paginate(3);

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBeritasTable extends Migration
+class CreateCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateBeritasTable extends Migration
      */
     public function up()
     {
-        Schema::create('berita', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('id_user')->constrained('users');
-            $table->string('judul');
-            $table->string('kategori');
-            $table->text('isi');
-            $table->string('image');
+        Schema::create('comments', function (Blueprint $table) {
+            $table->integer('id')->nullable();
+            $table->string('nama', 40);
+            $table->string('email', 50);
+            $table->string('isi', 170);
+            $table->integer('id_komen')->nullable();
+            $table->foreignId('id_berita')->constrained('berita');
             $table->timestamps();
         });
     }
@@ -32,6 +32,5 @@ class CreateBeritasTable extends Migration
     public function down()
     {
         Schema::dropIfExists('comments');
-        Schema::dropIfExists('berita');
     }
 }
